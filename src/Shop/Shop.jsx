@@ -6,9 +6,9 @@ import { ShopsContext } from '../Context/ShopsContext';
 const Shop = () => {
 const {numItems,data,CartItems,SetCartItem} = useContext(ShopsContext)
 
-   const emptyCart = (id) =>{
-
-    SetCartItem(CartItems.filter((item)=>item.id !== id))
+   const emptyCart = (id,index) =>{
+  
+    SetCartItem(CartItems.filter((item,ind)=>ind!== index))
    }
 
     return (
@@ -33,7 +33,7 @@ const {numItems,data,CartItems,SetCartItem} = useContext(ShopsContext)
                                        <div> items count {CartItems.length}</div>
                                        <div>Total{}</div>
                                       {CartItems.map((item,index)=>{
-                                          return <div key={index}>{item.title} <span> <button onClick={()=>emptyCart(item.id)} >X </button> </span></div>
+                                          return <div key={index}>{item.title} <span> <button onClick={()=>emptyCart(item.id,index)} >X  </button> </span></div>
                                       })}
                                   
                                   </div>
