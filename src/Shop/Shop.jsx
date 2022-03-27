@@ -37,6 +37,7 @@ const {numItems,data,CartItems,SetCartItem} = useContext(ShopsContext)
                                       })}
                                   
                                   </div>
+                                  
                       </div>
 
 
