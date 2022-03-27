@@ -9,7 +9,7 @@ const addItems =(id)=>{
   console.log(id)
     let incat =    data.filter((items)=>items.id == id);    
     SetCartItem([...CartItems,incat[0]])
-          console.log(CartItems.length)
+        
 }
 
 

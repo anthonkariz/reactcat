@@ -4,7 +4,10 @@ import './ShopStyle.css'
 import Items from './Items';
 import { ShopsContext } from '../Context/ShopsContext';
 const Shop = () => {
-const {numItems,data,CartItems,SetCartItem} = useContext(ShopsContext)
+const {numItems,data,CartItems,SetCartItem,setnumItems} = useContext(ShopsContext)
+
+var  sum = 0;
+console.log(numItems)
 
    const emptyCart = (id,index) =>{
   
@@ -31,13 +34,14 @@ const {numItems,data,CartItems,SetCartItem} = useContext(ShopsContext)
                               </div>
                               <div className='col-md-4'>
                                        <div> items count {CartItems.length}</div>
-                                       <div>Total{}</div>
+                                       <div>Total{numItems.toFixed(2)}</div>
                                       {CartItems.map((item,index)=>{
-                                          return <div key={index}>{item.title} <span> <button onClick={()=>emptyCart(item.id,index)} >X  </button> </span></div>
+                                           setnumItems(sum += item.price);
+                                          return <div key={index}>{item.title} {item.price} <span> <button onClick={()=>emptyCart(item.id,index)} >X  </button> </span></div>
                                       })}
                                   
                                   </div>
-                                  
+
                       </div>
 
 

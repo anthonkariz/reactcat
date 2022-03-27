@@ -6,7 +6,7 @@ export const ShopsContext = createContext({})
 export const ShopsProvider = ({children})=>{
 
     const [CartItems,SetCartItem]= useState([])
-    const [numItems,setnumItems] = useState(1)
+    const [numItems,setnumItems] = useState(0.00)
 
 
 
